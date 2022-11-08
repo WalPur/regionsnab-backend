@@ -26,3 +26,18 @@ class NewsImage(models.Model):
     class Meta:
         verbose_name = 'Картинка к слайдеру новости'
         verbose_name_plural = 'Картинки к слайдеру новости'
+
+
+class partnerShip(models.Model):
+    surname = models.TextField(verbose_name="Фамилия")
+    first_name = models.TextField(verbose_name="Имя")
+    patronymic = models.TextField(verbose_name="Отчество")
+    email = models.EmailField(max_length=254, verbose_name="Электронная почта")
+    phone = models.TextField(verbose_name="Номер телефона")
+
+    def __str__(self):
+        return '{} {} {}'.format(self.surname, self.first_name, self.patronymic)
+    
+    class Meta:
+        verbose_name = 'Заявка на сотрудничество'
+        verbose_name_plural = 'Заявки на сотрудничество'

@@ -7,7 +7,8 @@ from .models import (
 )
 
 from .serializer import (
-    NewsSerializer
+    NewsSerializer,
+    PartnershipSerializer
 )
 
 
@@ -17,3 +18,7 @@ class NewsEndpoint(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return News.objects.all()
+
+class PartnerShipEndpoint(viewsets.ModelViewSet):
+    http_method_names = ['post']
+    serializer_class = PartnershipSerializer

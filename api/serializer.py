@@ -4,6 +4,7 @@ from rest_framework.serializers import ImageField
 from .models import (
     News,
     NewsImage,
+    partnerShip,
 )
 
 
@@ -36,3 +37,9 @@ class NewsSerializer(serializers.ModelSerializer):
             NewsImage.objects.filter(article=obj.id),
             many=True
         ).data
+
+
+class PartnershipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = partnerShip
+        fields = "__all__"
