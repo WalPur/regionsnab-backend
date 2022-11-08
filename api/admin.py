@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import News, NewsImage, partnerShip
+from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 class ImagesInline(admin.TabularInline):
@@ -8,10 +9,11 @@ class ImagesInline(admin.TabularInline):
 
 
 @admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
+class NewsAdmin(SummernoteModelAdmin):
     list_display = ['title', 'short_desc']
     list_filter = ['title']
     search_fields = ['title']
+    summernote_fields = ('full_desc',)
     inlines = [ImagesInline, ]
 
 

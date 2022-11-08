@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'api',
 ]
 
+INSTALLED_APPS += ('django_summernote', )
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 2,
