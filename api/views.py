@@ -17,7 +17,7 @@ class NewsEndpoint(viewsets.ModelViewSet):
     serializer_class = NewsSerializer
 
     def get_queryset(self):
-        return News.objects.all()
+        return News.objects.all().order_by('-pub_date')
 
 class PartnerShipEndpoint(viewsets.ModelViewSet):
     http_method_names = ['post']

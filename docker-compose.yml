@@ -2,16 +2,16 @@ version: '3.3'
 
 services:
   django:
-    build: ./
-    command: "gunicorn tdregionsnab.wsgi --bind 0.0.0.0:8000"
+    build: .
+    command: sh -c "gunicorn --bind 0.0.0.0:8000 tdregionsnab.wsgi"
     volumes:
-      - ./backend:/app/api
-      - static_volume:/static
-      - media_volume:/media
+      - .:/app
+      - /static:/static
+      - /media:/media
     env_file:
       - '.env'
-    expose:
-      - 8000
+    ports:
+      - '8000:8000'
 
 volumes:
   static_volume:

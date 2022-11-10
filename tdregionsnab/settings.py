@@ -14,7 +14,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["tdregionsnab.ru"]
 
 
 INSTALLED_APPS = [
@@ -102,12 +102,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/django_static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = '/static'
 MEDIA_URL = '/django_media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/media'
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000", "https://tdregionsnab.ru"]
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000", "https://tdregionsnab.ru", "https://tdregionsnab.ru/"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
