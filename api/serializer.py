@@ -9,7 +9,7 @@ from .models import (
 
 
 class ImageSerializer(serializers.ModelSerializer):
-    image = ImageField(read_only=True)
+    image = ImageField(read_only=True, source="image_cropped")
 
     class Meta:
         model = NewsImage
@@ -18,6 +18,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class NewsSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
+    prev_image = ImageField(read_only=True, source="prev_image_cropped")
 
     class Meta:
         model = News
